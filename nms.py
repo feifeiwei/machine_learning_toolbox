@@ -61,10 +61,7 @@ class NMS(object):
             # Get the coordinates of bounding boxes
             b1_x1, b1_y1, b1_x2, b1_y2 = box1[:,0], box1[:,1], box1[:,2], box1[:,3]
             b2_x1, b2_y1, b2_x2, b2_y2 = box2[:,0], box2[:,1], box2[:,2], box2[:,3]
-            
-        # get the corrdinates of the intersection rectangle
-        
-    
+          
         # get the corrdinates of the intersection rectangle
         inter_rect_x1 =  np.max(np.concatenate((b1_x1.repeat(s),b2_x1)).reshape(-1,s), 0)
         inter_rect_y1 =  np.max(np.concatenate((b1_y1.repeat(s),b2_y1)).reshape(-1,s), 0)
