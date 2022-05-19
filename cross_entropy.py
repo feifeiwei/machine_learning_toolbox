@@ -5,7 +5,7 @@ import numpy as np
 
 def batch_softmax(x):
     
-    return np.exp(x) / np.sum(np.exp(x), axis=1).reshape(3,1)
+    return np.exp(x) / np.sum(np.exp(x), axis=1).reshape(-1,1)
 
 
 
