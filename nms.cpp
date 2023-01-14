@@ -92,9 +92,6 @@ void nonMaxSuppression(std::vector<Object>& objects, int limit, float threshold,
     selected.clear();
     qsort_descent_inplace(objects);
     
-    for(auto &c : objects)
-        std::cout << c.prob << std::endl;
-    
     for(int i=0; i<objects.size(); ++i)
     {
         const Object& a = objects[i];
