@@ -82,6 +82,7 @@ float IOU(const Object& a, const Object& b)
 
 /*
  nonMaxSuppression
+ for single class
 - Parameters:
   - objects: an vector of bounding boxes and their scores
   - limit: the maximum number of boxes that will be selected
@@ -98,7 +99,6 @@ void nonMaxSuppression(std::vector<Object>& objects, int limit, float threshold,
         bool keep = true;
         for (size_t j=0; j<selected.size(); ++j) {
             const Object& b = objects[selected[j]];
-            if (b.label != a.label) continue;//多目标
             if (IOU(a, b) > threshold)
                 keep = false;
         }
